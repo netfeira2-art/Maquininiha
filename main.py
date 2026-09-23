@@ -33,7 +33,7 @@ class Login:
         
         if "usuario" not in st.session_state:
             
-            st.session_state.usuario ='ti@demarchibrasil.com.br'
+            st.session_state.usuario =None
             
             pass          
         
