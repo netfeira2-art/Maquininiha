@@ -334,7 +334,7 @@ class Administrador:
                     
                             for index,row in df['temp'].iterrows():
                                 
-                                st.markdown(f'<p style="font-family:Arial;color:#7f8c8d;font-size:14px;">Data & Hora: {row["data_hora"]}</p>',unsafe_allow_html=True)                                
+                                st.markdown(f'<p style="font-family:Arial;color:#7f8c8d;font-size:14px;">Data: {row["data_hora"]}</p>',unsafe_allow_html=True)                                
                                 
                                 pass
                             
