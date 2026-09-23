@@ -110,9 +110,9 @@ class Motorista:
                             
                             """
                             
-                            INSERT INTO controle_maquininha (nome_motorista,codigo_maquininha,data_hora) VALUES('{0}',{1},'{2}')
+                            INSERT INTO controle_maquininha (nome_motorista,codigo_maquininha) VALUES('{0}',{1})
                             
-                            """.format(str(st.session_state['motorista']).strip().upper(),int(st.session_state['codigo_maquininha']),datetime.now())
+                            """.format(str(st.session_state['motorista']).strip().upper(),int(st.session_state['codigo_maquininha']))
                             
                             
                     }

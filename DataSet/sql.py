@@ -342,7 +342,8 @@ class SQL:
         return df        
         
         pass
-        
+    
+    
     def dfFrame(self,querys:dict,tabela:list):
         
         df=dict()
