@@ -1,0 +1,42 @@
+[theme]
+base = "light"
+
+# Cor principal
+primaryColor = "#0F2744"
+
+# Fundo principal
+backgroundColor = "#F8FAFC"
+
+# Sidebar, cards e elementos secundários
+secondaryBackgroundColor = "#FFFFFF"
+
+# Texto principal
+textColor = "#0F172A"
+
+# Links
+linkColor = "#0F2744"
+
+# Bordas
+borderColor = "#E2E8F0"
+
+# Inputs
+showWidgetBorder = true
+
+# Fonte
+font = "sans-serif"
+
+# Cantos
+baseRadius = "0.6rem"
+buttonRadius = "0.6rem"
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8FAFC"
+textColor = "#0F172A"
+primaryColor = "#0F2744"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
