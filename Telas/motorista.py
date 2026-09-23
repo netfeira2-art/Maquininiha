@@ -12,7 +12,7 @@ class Motorista:
         self.IP=s.gethostbyname(s.gethostname())
         
         self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
-        os.makedirs(self.path_base,exist_ok=True)
+        os.makedirs(self.path_base,exist_ok=True)        
         
         self.sql=SQL()
         

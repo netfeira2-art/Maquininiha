@@ -31,9 +31,17 @@ class Login:
         self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
         os.makedirs(self.path_base,exist_ok=True)
         
+        if "usuario" not in st.session_state:
+            
+            st.session_state.usuario =None
+            
+            pass
+        
+        print(st.session_state.usuario)             
+        
         self.sql=SQL()
 
-        self.sql.criateTable()        
+        self.sql.criateTable()      
                 
         pass
     
@@ -44,7 +52,7 @@ class Login:
         arquivos=glob(temp_path)
         
         if len(arquivos)>0:
-            
+                                    
             with open(arquivos[-1],'r') as file:
                 
                 tela=file.read()
@@ -61,9 +69,20 @@ class Login:
             
             elif tela=='Administrador':
                 
-                app=gui.Administrador()
+                if st.session_state.usuario!=None:
                 
-                app.main()
+                    app=gui.Administrador()
+                        
+                    app.main()
+                    
+                    pass
+                
+                else:
+                    
+                    self.main()
+                    
+                    pass
+                    
                 
                 pass
             
@@ -200,6 +219,8 @@ class Login:
             
             
             else:
+            
+                st.session_state.usuario= 'ti@demarchibrasil.com.br'
             
                 with open(temp_path,'w') as file:
                     
