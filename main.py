@@ -37,24 +37,22 @@ class Login:
                 tela=file.read()
                 
                 pass
+                            
+            if tela=='Motorista':
+                
+                app=gui.Motorista()
+                
+                app.main()
+                
+                pass
             
-            match tela:
+            elif tela=='Administrador':
                 
-                case 'Motorista':
-                    
-                    app=gui.Motorista()
-                    
-                    app.main()
-                    
-                    pass
+                app=gui.Administrador()
                 
-                case 'Administrador':
-                    
-                    app=gui.Administrador()
-                    
-                    app.main()
-                    
-                    pass
+                app.main()
+                
+                pass
             
             pass
         
