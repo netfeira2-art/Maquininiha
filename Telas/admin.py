@@ -19,8 +19,6 @@ class Administrador:
             st.session_state.usuario ='ti@demarchibrasil.com.br'
             
             pass
-        
-        st.session_state.usuario= 'ti@demarchibrasil.com.br'
                                      
         self.sql=SQL()
         
@@ -125,7 +123,7 @@ class Administrador:
                         
                         st.rerun()
                         
-                        pass                    
+                        pass                   
                     
                     pass
                 
