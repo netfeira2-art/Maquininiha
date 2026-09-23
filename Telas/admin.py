@@ -103,13 +103,15 @@ class Administrador:
                         
             with st.container():
                                 
-                divs=st.columns(2,vertical_alignment='center')
+                divs=st.columns(2,vertical_alignment='top')
                 
                 with divs[0].container():
             
                     st.markdown('<h1 style="font-family:Arial;font-size:2.5rem;color:#16a085;">Maquininhas</h1>',unsafe_allow_html=True)
                     
                     st.markdown('<p style="font-family:Arial;font-size:16px;color:#7f8c8d;">Gere QR Codes, acompanhe responsáveis e dê baixa nas entregas.</p>',unsafe_allow_html=True)
+                    
+                    st.button(label='Atualizar',icon=':material/refresh:',type='primary',key='btn_refresh',width=195,on_click=lambda:self.refresh)                    
                     
                     pass
                 
@@ -529,6 +531,12 @@ class Administrador:
             st.rerun()
             
             pass 
+        
+        pass
+    
+    def refresh(self):
+        
+        st.rerun()
         
         pass
     
