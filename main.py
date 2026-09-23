@@ -25,17 +25,12 @@ class Login:
     
     
     def __init__(self):
-        
-        self.IP=s.gethostbyname(s.gethostname())
-        
-        self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
-        os.makedirs(self.path_base,exist_ok=True)
-        
-        if "usuario" not in st.session_state:
+                
+        if 'tela' not in st.session_state:
             
-            st.session_state.usuario =None
+            st.session_state.tela=None
             
-            pass          
+            pass       
         
         self.sql=SQL()
 
@@ -46,45 +41,21 @@ class Login:
     
     def log(self):
         
-        temp_path=os.path.join(self.path_base,'*.txt*')
-        arquivos=glob(temp_path)
-        
-        if len(arquivos)>0:
-                                    
-            with open(arquivos[-1],'r') as file:
-                
-                tela=file.read()
-                
-                pass
-                            
-            if tela=='Motorista':
-                
-                app=gui.Motorista()
-                
-                app.main()
-                
-                pass
+        if st.session_state.tela=='Motorista':
             
-            elif tela=='Administrador':
-                
-                if st.session_state.usuario!=None:
-                
-                    app=gui.Administrador()
-                        
-                    app.main()
-                    
-                    pass
-                
-                else:
-                    
-                    self.main()
-                    
-                    pass
-                    
-                
-                pass
+            app=gui.Motorista()
+            
+            app.main()
             
             pass
+        
+        elif st.session_state.tela=='Administrador':
+            
+            app=gui.Administrador()
+            
+            app.main()
+            
+            pass        
         
         else:
         
@@ -149,15 +120,9 @@ class Login:
         
         if st.session_state['btn_motorista']:
             
-            temp_path=os.path.join(self.path_base,'tela.txt')
+            st.session_state.tela='Motorista'
             
-            with open(temp_path,'w') as file:
-                
-                file.write('Motorista')
-                
-                pass
-            
-            st.rerun()
+            st.rerun()          
             
             pass
         
@@ -188,9 +153,7 @@ class Login:
             pass
         
         if st.session_state['btn_conecta']:
-            
-            temp_path=os.path.join(self.path_base,'tela.txt')
-            
+                        
             querys={
                 
                 'validar':
@@ -218,13 +181,7 @@ class Login:
             
             else:
                 
-                st.session_state.usuario= 'ti@demarchibrasil.com.br'
-                                        
-                with open(temp_path,'w') as file:
-                    
-                    file.write('Administrador')
-                    
-                    pass
+                st.session_state.tela='Administrador'
                 
                 st.rerun()
                 

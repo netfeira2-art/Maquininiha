@@ -8,18 +8,7 @@ import time
 class Administrador:
     
     def __init__(self):
-        
-        self.IP=s.gethostbyname(s.gethostname())
-        
-        self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
-        os.makedirs(self.path_base,exist_ok=True)
-        
-        if "usuario" not in st.session_state:
-            
-            st.session_state.usuario ='ti@demarchibrasil.com.br'
-            
-            pass
-                                     
+                                             
         self.sql=SQL()
         
         self.sql.criateTable()
@@ -117,13 +106,7 @@ class Administrador:
                     
                     st.markdown('<p style="font-family:Arial;font-size:16px;color:#7f8c8d;">Gere QR Codes, acompanhe responsáveis e dê baixa nas entregas.</p>',unsafe_allow_html=True)
                     
-                    st.button(label='Atualizar',icon=':material/refresh:',type='primary',key='btn_refresh',width=195)
-                    
-                    if st.session_state['btn_refresh']:
-                        
-                        st.rerun()
-                        
-                        pass                   
+                    st.button(label='Atualizar',icon=':material/refresh:',type='primary',key='btn_refresh',width=195,on_click=lambda:self.refresh)                  
                     
                     pass
                 
@@ -368,10 +351,8 @@ class Administrador:
         
         if st.session_state['btn_sair']:
             
-            temp_path=os.path.join(self.path_base,'tela.txt')
-            
-            os.remove(temp_path)
-            
+            st.session_state.tela=None
+                                    
             st.rerun()
             
             pass
@@ -545,5 +526,11 @@ class Administrador:
             pass 
         
         pass
+    
+    def refresh(self):
         
+        st.rerun()
+        
+        pass
+    
     pass

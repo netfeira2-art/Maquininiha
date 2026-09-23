@@ -9,12 +9,7 @@ from datetime import datetime
 class Motorista:
     
     def __init__(self):
-        
-        self.IP=s.gethostbyname(s.gethostname())
-        
-        self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
-        os.makedirs(self.path_base,exist_ok=True)        
-        
+                      
         self.sql=SQL()
         
         self.sql.criateTable()     
@@ -67,9 +62,7 @@ class Motorista:
         
         if st.session_state['btn_voltar']:
             
-            temp_path=os.path.join(self.path_base,'tela.txt')
-            
-            os.remove(temp_path)
+            st.session_state.tela=None
             
             st.rerun()
             
@@ -143,10 +136,9 @@ class Motorista:
                         time.sleep(1)
                         mensagem.empty()
                         
-                        temp_path=os.path.join(self.path_base,'tela.txt')
-                        os.remove(temp_path)
-                        
-                        st.rerun()                     
+                        st.session_state.tela=None
+                                                
+                        st.rerun()                   
                         
                         pass
                     
