@@ -13,6 +13,8 @@ class Administrador:
         
         self.path_base=os.path.join(os.getcwd(),'PC',self.IP)
         os.makedirs(self.path_base,exist_ok=True)
+        
+        st.session_state.usuario= 'ti@demarchibrasil.com.br'
                              
         self.sql=SQL()
         

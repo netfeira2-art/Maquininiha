@@ -219,9 +219,7 @@ class Login:
             
             
             else:
-            
-                st.session_state.usuario= 'ti@demarchibrasil.com.br'
-            
+                                        
                 with open(temp_path,'w') as file:
                     
                     file.write('Administrador')
