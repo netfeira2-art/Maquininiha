@@ -4,6 +4,7 @@ import os
 import time
 from DataSet import SQL
 from glob import glob
+from datetime import datetime
 
 class Motorista:
     
@@ -116,9 +117,9 @@ class Motorista:
                             
                             """
                             
-                            INSERT INTO controle_maquininha (nome_motorista,codigo_maquininha) VALUES('{0}',{1})
+                            INSERT INTO controle_maquininha (nome_motorista,codigo_maquininha,data_hora) VALUES('{0}',{1},'{2}')
                             
-                            """.format(str(st.session_state['motorista']).strip().upper(),int(st.session_state['codigo_maquininha']))
+                            """.format(str(st.session_state['motorista']).strip().upper(),int(st.session_state['codigo_maquininha']),datetime.now())
                             
                             
                     }
