@@ -306,8 +306,7 @@ class Administrador:
                                 b.numero_maquininha,
                                 a.codigo AS id,
                                 a.nome_motorista,
-                                a.data_hora
-                                --STRFTIME('%d/%m/%Y %H:%M:%S', a.data_hora) AS data_hora
+                                STRFTIME('%d/%m/%Y', a.data_hora) AS data_hora
                             FROM historico_maquininha AS a
                             INNER JOIN operadoras AS b
                                 ON a.codigo_maquininha = b.codigo
