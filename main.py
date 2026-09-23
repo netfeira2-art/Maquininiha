@@ -33,11 +33,9 @@ class Login:
         
         if "usuario" not in st.session_state:
             
-            st.session_state.usuario =None
+            st.session_state.usuario ='ti@demarchibrasil.com.br'
             
-            pass
-        
-        print(st.session_state.usuario)             
+            pass          
         
         self.sql=SQL()
 
