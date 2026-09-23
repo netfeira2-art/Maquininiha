@@ -93,7 +93,7 @@ class Login:
                     with st.container(vertical_alignment='center',horizontal_alignment='center'): 
 
                         img_path=os.path.join(os.getcwd(),'Imagens','logo.svg')
-                        img=glob(icon_path)
+                        img=glob(img_path)
                         
                         if len(img)>0:                   
                     

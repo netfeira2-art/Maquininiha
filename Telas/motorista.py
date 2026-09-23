@@ -3,6 +3,7 @@ import socket as s
 import os
 import time
 from DataSet import SQL
+from glob import glob
 
 class Motorista:
     
@@ -34,7 +35,14 @@ class Motorista:
                     
                     with st.container(vertical_alignment='center',horizontal_alignment='center'): 
                     
-                        st.image('Imagens\logo.svg',width=325)
+                        img_path=os.path.join(os.getcwd(),'Imagens','logo.svg')
+                        img=glob(img_path)
+                        
+                        if len(img)>0:                   
+                    
+                            st.image(img[-1],width=325)
+                            
+                            pass
                         
                         pass
                     
