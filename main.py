@@ -6,7 +6,20 @@ from glob import glob
 from DataSet import SQL
 import time
 
-st.set_page_config(layout='wide',page_title='Maquininha',page_icon=r'Imagens\logo.ico')
+icon_path=os.path.join(os.getcwd(),'Imagens','*.ico*')
+icon=glob(icon_path)
+
+if len(icon)>0:
+
+    st.set_page_config(layout='wide',page_title='Maquininha',page_icon=icon[-1])
+    
+    pass
+
+else:
+    
+    st.set_page_config(layout='wide',page_title='Maquininha')
+    
+    pass
 
 class Login:
     
@@ -78,8 +91,15 @@ class Login:
                 with st.container():
                     
                     with st.container(vertical_alignment='center',horizontal_alignment='center'): 
+
+                        img_path=os.path.join(os.getcwd(),'Imagens','logo.svg')
+                        img=glob(icon_path)
+                        
+                        if len(img)>0:                   
                     
-                        st.image('Imagens\logo.svg',width=325)
+                            st.image(img[-1],width=325)
+                            
+                            pass
                         
                         pass        
                     
