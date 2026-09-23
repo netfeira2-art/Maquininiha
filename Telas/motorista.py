@@ -78,7 +78,10 @@ class Motorista:
             
             if st.session_state['codigo_maquininha']=='' and st.session_state['motorista']=='':
                 
-                self.dialogMSG(mensagem='Preencha os campos em questão.',imagem=r'Imagens\error.svg',titulo='Erro')
+                img_path=os.path.join(os.getcwd(),'Imagens','error.svg')
+                img=glob(img_path)                
+                
+                self.dialogMSG(mensagem='Preencha os campos em questão.',imagem=img[-1],titulo='Erro')
                 
                 pass
             
@@ -88,7 +91,10 @@ class Motorista:
                 
                 if valor==False:
                     
-                    self.dialogMSG(mensagem='Número da maquininha inválido.',imagem=r'Imagens\error.svg',titulo='Erro')
+                    img_path=os.path.join(os.getcwd(),'Imagens','error.svg')
+                    img=glob(img_path)                       
+                    
+                    self.dialogMSG(mensagem='Número da maquininha inválido.',imagem=img[-1],titulo='Erro')
                     
                     pass
                 
@@ -120,8 +126,11 @@ class Motorista:
                     validar=self.sql.codigo(querys['validar'])
                     
                     if validar<=0:
+                                                
+                        img_path=os.path.join(os.getcwd(),'Imagens','error.svg')
+                        img=glob(img_path)                        
                         
-                        self.dialogMSG(mensagem='Número da maquininha inválido.',imagem=r'Imagens\error.svg',titulo='Erro')
+                        self.dialogMSG(mensagem='Número da maquininha inválido.',imagem=img[-1],titulo='Erro')
                         
                         pass
                     
