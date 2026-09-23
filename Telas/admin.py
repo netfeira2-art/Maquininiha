@@ -119,7 +119,13 @@ class Administrador:
                     
                     st.markdown('<p style="font-family:Arial;font-size:16px;color:#7f8c8d;">Gere QR Codes, acompanhe responsáveis e dê baixa nas entregas.</p>',unsafe_allow_html=True)
                     
-                    st.button(label='Atualizar',icon=':material/refresh:',type='primary',key='btn_refresh',width=195,on_click=lambda:self.refresh)                    
+                    st.button(label='Atualizar',icon=':material/refresh:',type='primary',key='btn_refresh',width=195)
+                    
+                    if st.session_state['btn_refresh']:
+                        
+                        st.rerun()
+                        
+                        pass                    
                     
                     pass
                 
@@ -541,11 +547,5 @@ class Administrador:
             pass 
         
         pass
-    
-    def refresh(self):
-                                
-        st.rerun()
         
-        pass
-    
     pass
