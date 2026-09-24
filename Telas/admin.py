@@ -59,9 +59,14 @@ class Administrador:
                         
                         """
                         
-                        SELECT COUNT(*) AS [Contagem]
-                        FROM historico_maquininha AS a
-                        WHERE DATE(a.data_hora) = DATE('now', 'localtime');                        
+                        SELECT COUNT(DISTINCT a.codigo) AS baixa FROM (
+
+                        SELECT a.codigo,COUNT(*) AS contagem
+                        FROM historico_maquininha a
+                        WHERE DATE(a.data_hora) = DATE('now', 'localtime');
+
+                        )a
+                        WHERE a.contagem>1
                         
                         """,
                         
