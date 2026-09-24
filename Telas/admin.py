@@ -63,7 +63,7 @@ class Administrador:
 
                         SELECT a.codigo,COUNT(*) AS contagem
                         FROM historico_maquininha a
-                        WHERE DATE(a.data_hora) = DATE('now', 'localtime');
+                        WHERE DATE(a.data_hora) = DATE('now', 'localtime')
 
                         )a
                         WHERE a.contagem>1
