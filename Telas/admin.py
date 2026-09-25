@@ -59,14 +59,16 @@ class Administrador:
                         
                         """
                         
-                        SELECT COUNT(DISTINCT a.codigo) AS baixa FROM (
+                        SELECT COUNT(DISTINCT a.codigo) AS contagem 
+                        FROM (
 
-                        SELECT a.codigo,COUNT(*) AS contagem
+
+                        SELECT a.codigo,a.nome_motorista,a.codigo_maquininha,COUNT(a.data_hora) AS contagem,MAX(data_hora) AS data_hora
                         FROM historico_maquininha a
-                        WHERE DATE(a.data_hora) = DATE('now', 'localtime')
+                        GROUP BY a.codigo,a.nome_motorista,a.codigo_maquininha
 
                         )a
-                        WHERE a.contagem>1
+                        WHERE DATE(a.data_hora) = DATE('now', 'localtime')
                         
                         """,
                         
@@ -324,7 +326,7 @@ class Administrador:
                     df=self.sql.dfFrame(querys,tabela=['historico'])
                     
                     for id in df['historico']['id'].unique().tolist():
-                        
+                                                
                         with st.container(border=True):
                             
                             df['temp']=df['historico'].loc[df['historico']['id']==id]
