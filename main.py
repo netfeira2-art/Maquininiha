@@ -38,7 +38,7 @@ class Login:
                 
         pass
     
-    @st.fragment(run_every=600)
+    @st.fragment(run_every=10)
     def log(self):
         
         if st.session_state.tela=='Motorista':
