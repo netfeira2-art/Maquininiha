@@ -38,7 +38,7 @@ class Login:
                 
         pass
     
-    
+    @st.fragment(run_every=600)
     def log(self):
         
         if st.session_state.tela=='Motorista':
@@ -189,7 +189,7 @@ class Login:
             
             pass
         
-        pass
+        pass    
     
     pass
 
@@ -197,7 +197,7 @@ class Login:
 if __name__=='__main__':
     
     app=Login()
-    
+        
     app.log()
     
     pass
