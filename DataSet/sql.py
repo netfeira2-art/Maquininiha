@@ -1,5 +1,6 @@
 import sqlite3
 import pandas as pd
+import streamlit as st
 
 class SQL:
     
@@ -21,7 +22,7 @@ class SQL:
         
         pass
     
-    
+    @st.cache_resource
     def criateTable(self):
         
         querys={
@@ -293,7 +294,6 @@ class SQL:
         
         
         pass
-    
     
     def dfDados(self):
         
