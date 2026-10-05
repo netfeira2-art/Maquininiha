@@ -1,5 +1,7 @@
 import sqlite3
 import pandas as pd
+import streamlit as st
+import os
 
 class SQL:
     
@@ -7,7 +9,11 @@ class SQL:
         
         try:
             
-            conecta=sqlite3.connect('MOINHO.db')
+            temp_path=os.path.join(os.getcwd(),'database')
+            os.makedirs(temp_path,exist_ok=True)
+            temp_path=os.path.join(temp_path,'MOINHO.db')
+            
+            conecta=sqlite3.connect(temp_path,check_same_thread=False)
             
             return conecta
             

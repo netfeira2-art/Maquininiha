@@ -38,7 +38,6 @@ class Login:
                 
         pass
     
-    @st.fragment(run_every=10)
     def log(self):
         
         if st.session_state.tela=='Motorista':
@@ -64,8 +63,7 @@ class Login:
             pass
         
         pass
-    
-    
+        
     def main(self):
         
         placeholder=st.empty()
